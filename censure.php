@@ -1,6 +1,7 @@
 <?php
 $user_input = $_GET["user-paragraph"];
 $censure_word = $_GET["censure-word"];
+$censured_paragraph = strtr($user_input, $censure_word, "***");
 ?>
 
 <!DOCTYPE html>
@@ -14,18 +15,18 @@ $censure_word = $_GET["censure-word"];
 </head>
 
 <body>
-    <section class="w-50 mx-auto mt-5 border border-success">
-        <p class="mb-0 text-danger fs-3 fw-semibold">Paragrafo:</p>
-        <h1 class="fs-4 fw-semibold mb-4"> <?php echo $user_input; ?> </h1>
-        <p class="mb-0 text-danger fs-3 fw-semibold">Parola da censurare:</p>
+    <section class="w-50 mx-auto mt-5">
+        <p class="mb-0 text-primary fs-3 fw-semibold">Paragrafo:</p>
+        <h1 class="fs-4 fw-semibold"> <?php echo $user_input; ?> </h1>
+        <h2 class="fs-4 mb-4 text-danger"><?php echo "Il paragrafo contiene " . strlen($user_input) . " caratteri" ?></h2>
+        <p class="mb-0 text-primary fs-3 fw-semibold">Parola da censurare:</p>
         <p class="fs-5"> <?php echo $censure_word; ?> </p>
     </section>
 
-    <section class="w-50 mx-auto mt-5 border border-success">
-        <p class="mb-0 text-danger fs-3 fw-semibold">Paragrafo:</p>
-        <h1 class="fs-4 fw-semibold mb-4"> <?php echo $user_input; ?> </h1>
-        <p class="mb-0 text-danger fs-3 fw-semibold">Parola da censurare:</p>
-        <p class="fs-5"> <?php echo $censure_word; ?> </p>
+    <section class="w-50 mx-auto mt-5">
+        <p class="mb-0 text-primary fs-3 fw-semibold">Paragrafo Finale:</p>
+        <h1 class="fs-4 fw-semibold"> <?php echo $censured_paragraph; ?> </h1>
+        <h2 class="fs-4 mb-4 text-danger"><?php echo "Il paragrafo contiene " . strlen($user_input) . " caratteri" ?></h2>
     </section>
 </body>
 
