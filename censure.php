@@ -1,3 +1,7 @@
+<?php 
+    $user_input = $_GET["userParagraph"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +10,6 @@
     <title>Result</title>
 </head>
 <body>
-    
+    <h1> <?php echo $user_input; ?> </h1>
 </body>
 </html>
