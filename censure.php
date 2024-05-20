@@ -1,7 +1,7 @@
 <?php
 $user_input = $_GET["user-paragraph"];
 $censure_word = $_GET["censure-word"];
-$censured_paragraph = strtr($user_input, $censure_word, "***");
+$censured_paragraph = str_replace($censure_word, "***", $user_input);
 ?>
 
 <!DOCTYPE html>
